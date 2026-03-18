@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<!-- LIGHTBOX OVERLAY -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-prev" onclick="lbNav(-1, event)">&#8249;</button>
+  <button class="lb-next" onclick="lbNav(1, event)">&#8250;</button>
+  <div class="lb-inner" onclick="event.stopPropagation()">
+    <img class="lb-img" id="lb-img" src="" alt="" />
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="nav-logo">KC's Smoothie</div>
@@ -60,9 +71,13 @@
 <div id="overview" class="section">
   <div class="section-label">01 — Overview</div>
   <h2>Bridging the gap between a great food truck and its customers</h2>
-  <p>KC's Fresh Fruit & Smoothies is a popular food truck located at 33rd St. & Lancaster Walk, serving the Drexel University community. Despite a loyal following, KC's had no digital ordering presence — customers relied entirely on in-person interactions with no way to browse the menu, customize orders, or skip long wait times.</p>
-  <p>Team 4Corners took on the challenge across two consecutive courses. In IDM215, the team designed a Figma prototype that envisioned what a mobile ordering experience could look like for KC's. In IDM216, we picked up where that left off: revamping the interface design, conducting two rounds of user testing (alpha on the Figma prototype and beta on the coded version), and ultimately building a fully functional HTML/CSS web app deployed to production.</p>
-  <p>My contributions spanned the entire lifecycle — I served as secondary project manager, led the visual redesign of the interface, and was the primary person responsible for coding the final product in HTML and CSS.</p>
+  <p>KC's Fresh Fruit & Smoothies is a loved food truck located at 33rd St. & Lancaster Walk, serving the Drexel community. Despite a loyal following, KC's had no digital ordering presence and customers relied entirely on in-person interactions.</p>
+  <p>As an extension from IDM215, 4Corners took the designed Figma prototype from a previous quarter and revamped the interface design, conducted two rounds of user testing, and ultimately built a fully functional web app.</p>
+  <p>My role as the secondary project manager and designer consisted of leading the visual redesign of the interface and coding the beta prototype in HTML and CSS.</p>
+
+  <!-- As an extension from IDM215, 4Corners took the designed Figma prototype from a previous quarter and revamped the interface design, conducted two rounds of user testing, and ultimately built a fully functional web app.
+   
+  My role as the secondary project manager and designer consisted of leading the visual redesign of the interface and coding the beta prototype in HTML and CSS.-->
 
   <div class="stat-row">
     <div class="stat">
@@ -70,231 +85,13 @@
       <div class="stat-desc">Rounds of usability testing</div>
     </div>
     <div class="stat">
-      <div class="stat-num">4</div>
-      <div class="stat-desc">Distinct target audience segments</div>
+      <div class="stat-num">1</div>
+      <div class="stat-desc">Live final project</div>
     </div>
     <div class="stat">
       <div class="stat-num">2</div>
-      <div class="stat-desc">Semesters of iterative design</div>
+      <div class="stat-desc">Rounds of iterative design</div>
     </div>
-  </div>
-</div>
-
-<!-- CHALLENGE -->
-<div id="challenge" class="section">
-  <div class="section-label">02 — Context & Challenge</div>
-  <h2>A food truck with no digital presence</h2>
-  <p>KC's Smoothie operates as a cash-and-carry food truck with no app, no website, and no way for customers to place orders in advance. During peak hours — between classes, at lunch, and during campus events — lines grow long and potential customers walk away rather than wait.</p>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-icon sand">🏗️</div>
-      <h3>Background</h3>
-      <p>This project is the second phase of a two-course sequence. IDM215 produced a Figma prototype; IDM216 extended that work into a tested, coded, and deployed web application.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon coral">⚠️</div>
-      <h3>The Problem</h3>
-      <p>KC's had zero digital infrastructure. No menu online, no ordering system, no way to reduce wait times or reach customers outside of the physical truck location.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon blue">🎯</div>
-      <h3>Goals & Objectives</h3>
-      <p>Design and build a usable, accessible mobile ordering interface. Validate the design through two rounds of testing. Deliver a live, coded product — not just a prototype.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon yellow">👥</div>
-      <h3>Target Audience</h3>
-      <p>Anyone in the KC's community: Drexel students, local residents, faculty and staff, and nearby workers such as construction workers frequenting the area.</p>
-    </div>
-  </div>
-
-  <div style="margin-top: 40px;">
-    <h3>Target Audience Segments</h3>
-    <p>Our research identified four primary groups whose needs shaped the design — from quick, on-the-go orders for students between classes, to a familiar and easy-to-navigate interface for non-student regulars.</p>
-    <div class="tag-list">
-      <span class="tag">🎓 Drexel Students</span>
-      <span class="tag">🏘️ Local Residents</span>
-      <span class="tag">👩‍🏫 Faculty & Staff</span>
-      <span class="tag">🦺 Nearby Workers</span>
-    </div>
-  </div>
-</div>
-
-<!-- PROCESS -->
-<div id="process" class="section">
-  <div class="section-label">03 — Process & Insight</div>
-  <h2>From research to redesign to real code</h2>
-  <p>Our process spanned two courses and followed a disciplined design-test-iterate cycle. Below is a walkthrough of each major phase, with notes on my specific contributions at each stage.</p>
-
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="timeline-marker">🔍</div>
-      <div class="timeline-body">
-        <h3>Target Audience & User Personas</h3>
-        <p>The team identified four audience segments that reflect the real makeup of KC's customer base. Personas were developed to ground design decisions — a busy Drexel student who wants to order ahead between classes looks very different from a construction worker on a lunch break who may be a first-time user. These personas guided everything from the navigation structure to the copy on the menu screens.</p>
-        <div class="img-placeholder tall">
-          <div class="ph-icon">🖼️</div>
-          <div><strong>Add persona images here</strong><br>User persona cards for each of the 4 audience segments</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker">🗺️</div>
-      <div class="timeline-body">
-        <h3>User Journeys</h3>
-        <p>We mapped the end-to-end journey for our primary user — from hearing about KC's or walking past the truck, to browsing the menu, customizing an order, checking out, and picking it up. This helped us identify friction points, especially around customization (smoothie ingredients, fruit cups) and order confirmation, which became focal areas in the interface design.</p>
-        <div class="img-placeholder tall">
-          <div class="ph-icon">🖼️</div>
-          <div><strong>Add user journey map here</strong><br>Journey map showing the full ordering flow</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker">✏️</div>
-      <div class="timeline-body">
-        <h3>Figma Prototype (IDM215 Foundation)</h3>
-        <p>The previous course produced an initial Figma prototype. At the start of IDM216, the team evaluated that design and identified opportunities for improvement — cleaner visual hierarchy, stronger brand identity, and a more intuitive ordering flow. I took the lead on redesigning the interface in Figma before any code was written, establishing a refreshed visual language that carried through to the final coded product.</p>
-        <div class="img-grid">
-          <div class="img-placeholder medium">
-            <div class="ph-icon">🖼️</div>
-            <div><strong>IDM215 prototype screens</strong></div>
-          </div>
-          <div class="img-placeholder medium">
-            <div class="ph-icon">🖼️</div>
-            <div><strong>IDM216 redesigned Figma</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker">🎨</div>
-      <div class="timeline-body">
-        <h3>Style Guide</h3>
-        <p>The style guide established the visual DNA of the project — color palette, typography, iconography, spacing, and component patterns. It was the shared reference point that kept the coded prototype visually consistent with the Figma designs. I contributed to and applied the style guide during development.</p>
-        <div class="img-placeholder tall">
-          <div class="ph-icon">🖼️</div>
-          <div><strong>Add style guide here</strong><br>Colors, typography, components, spacing</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker">🧪</div>
-      <div class="timeline-body">
-        <h3>Alpha Testing — Figma Prototype</h3>
-        <p>Before writing a single line of code, we conducted alpha testing on the Figma prototype with real users. Participants were walked through key flows — browsing the menu, customizing a smoothie, and checking out. We gathered feedback on clarity, navigation logic, and visual appeal. Findings from this round directly shaped changes made before development began.</p>
-        <div class="img-placeholder medium">
-          <div class="ph-icon">🖼️</div>
-          <div><strong>Add alpha testing notes / screenshots here</strong></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker">💻</div>
-      <div class="timeline-body">
-        <h3>Coding the Prototype — HTML & CSS</h3>
-        <p>I was the primary developer responsible for translating the Figma designs into a working HTML/CSS product. This involved structuring the page architecture, implementing the visual design system in CSS, building interactive states (hover, active, cart updates), and ensuring the interface felt native on mobile screens. Ashley Nguyen served as Primary Coder and Data Architect, supporting the backend data structure and secondary code contributions.</p>
-        <div class="img-grid">
-          <div class="img-placeholder medium">
-            <div class="ph-icon">🖼️</div>
-            <div><strong>Code screenshots / editor view</strong></div>
-          </div>
-          <div class="img-placeholder medium">
-            <div class="ph-icon">🖼️</div>
-            <div><strong>Early coded prototype screens</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-marker">🔬</div>
-      <div class="timeline-body">
-        <h3>Beta Testing — Coded Prototype</h3>
-        <p>Once the coded prototype was stable, we ran a second round of usability testing with real users — this time on the live, interactive HTML/CSS version. This round surfaced issues that are only visible in a functioning product: interaction feedback, real scrolling behavior, and the feel of tapping through an actual interface. Findings were used to refine the final version before deployment.</p>
-        <div class="img-placeholder medium">
-          <div class="ph-icon">🖼️</div>
-          <div><strong>Add beta testing notes / screen recordings here</strong></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Testing Summary -->
-  <h3 style="margin-top: 8px;">Testing Summary</h3>
-  <div class="testing-grid">
-    <div class="test-card">
-      <div class="test-header alpha">🔵 &nbsp; Alpha Testing — Figma Prototype</div>
-      <div class="test-body">
-        Conducted with real users on the interactive Figma prototype before development. Focused on evaluating the navigation flow, menu structure, and overall comprehension of the ordering process. Findings informed the final design before any code was written.
-      </div>
-    </div>
-    <div class="test-card">
-      <div class="test-header beta">🟠 &nbsp; Beta Testing — Coded Prototype</div>
-      <div class="test-body">
-        Conducted with real users on the functional HTML/CSS build. Evaluated real interactions, responsiveness, and the end-to-end ordering experience in a live environment. Findings were used to polish the final deployed product.
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SOLUTION -->
-<div id="solution" class="section">
-  <div class="section-label">04 — The Solution</div>
-  <h2>A clean, mobile-first ordering experience</h2>
-  <p>The final product is a fully coded, deployed web application that gives KC's customers a way to browse the menu, customize their order, and manage their bag — all from their phone. The interface was designed to feel approachable and quick for users on the go, with a clear visual hierarchy that makes scanning the menu and placing an order effortless.</p>
-
-  <div class="img-placeholder tall" style="margin-top: 32px;">
-    <div class="ph-icon">🖼️</div>
-    <div><strong>Add final product screenshots here</strong><br>Home screen, menu, customization, bag, and checkout screens</div>
-  </div>
-
-  <div class="feature-list">
-    <div class="feature-item">
-      <div class="feature-num">01</div>
-      <div class="feature-text">
-        <h3>Personalized Home Screen</h3>
-        <p>The landing screen greets the user by name and surfaces featured items — including the "Most Popular" Custom Smoothie and a "Campus Pick" — making it easy to discover new items while keeping regulars in their groove.</p>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-num">02</div>
-      <div class="feature-text">
-        <h3>Custom Order Builder</h3>
-        <p>Users can fully customize smoothies and fruit cups, mirroring the real KC's experience of telling the vendor exactly what you want. This was a key UX priority identified in the user journey mapping phase.</p>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-num">03</div>
-      <div class="feature-text">
-        <h3>Persistent Bag & Order History</h3>
-        <p>A persistent bag icon and an order history tab allow users to track current and past orders — reducing anxiety around whether an order was placed and making repeat ordering frictionless.</p>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feature-num">04</div>
-      <div class="feature-text">
-        <h3>Mobile-First Interface</h3>
-        <p>Every design and code decision was made with a mobile screen in mind. Navigation is thumb-friendly, tap targets are generously sized, and the layout adapts naturally to smaller viewports.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="live-link-wrap">
-    <div>
-      <h3>See it live</h3>
-      <p>The final product is deployed and accessible at the link below.</p>
-    </div>
-    <a class="btn-live" href="https://idm216-k-cs-so63.vercel.app" target="_blank">
-      ↗ Visit KC's Smoothie
-    </a>
   </div>
 </div>
 
@@ -329,10 +126,268 @@
   </div>
 </div>
 
+<!-- CHALLENGE -->
+<div id="challenge" class="section">
+  <div class="section-label">02 — Context & Challenge</div>
+  <h2>A food truck with no digital presence</h2>
+  <p>KC's Smoothie operates as a food truck with no app, no website, and no way for customers to place orders in advance. During peak hour lines grow long and potential customers walk away rather than wait.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon sand">🏗️</div>
+      <h3>Background</h3>
+      <p>This project is the second phase of a two-course sequence. IDM215 produced a Figma prototype; IDM216 extended that work into a tested, coded, and deployed web app.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon coral">⚠️</div>
+      <h3>The Problem</h3>
+      <p>KC's had zero digital infrastructure. No menu online, no ordering system, no way to reduce wait times or reach customers outside of the physical truck location.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon blue">🎯</div>
+      <h3>Goals & Objectives</h3>
+      <p>Design and build a usable, accessible mobile ordering interface. Validate the design through two rounds of testing. Deliver a coded product</p>
+    </div>
+    <div class="card">
+      <div class="card-icon yellow">👥</div>
+      <h3>Target Audience</h3>
+      <p>Anyone in the KC's community, Drexel students, local residents, faculty and staff, and nearby workers such as construction workers frequenting the area.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px;">
+    <h3>Target Audience Segments</h3>
+    <p>Our research identified four primary groups whose needs shaped the design — from quick, on-the-go orders for students between classes, to a familiar and easy-to-navigate interface for non-student regulars.</p>
+    <div class="tag-list">
+      <span class="tag">🎓 Drexel Students</span>
+      <span class="tag">🏘️ Local Residents</span>
+      <span class="tag">👩‍🏫 Faculty & Staff</span>
+      <span class="tag">🦺 Nearby Workers</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div id="process" class="section">
+  <div class="section-label">03 — Process & Insight</div>
+  <h2>From research to redesign to real code</h2>
+  <p>Our process followed design-test-iterate cycle. Below is a walkthrough of each major phase, with notes on my specific contributions at each stage.</p>
+
+  <div class="timeline">
+
+    <!-- PERSONAS -->
+    <div class="timeline-item">
+      <div class="timeline-marker">🔍</div>
+      <div class="timeline-body">
+        <h3>Target Audience & User Personas</h3>
+        <p>The team identified three core personas that reflect the real makeup of KC's customer base.These personas grounded every design decision, from navigation structure to the copy on the menu screens.</p>
+
+        <div class="carousel" id="persona-carousel">
+          <div class="carousel-track" id="persona-track">
+            <div class="carousel-slide">
+              <img src="Luis.png" alt="Luis Smith — Commercial Construction Worker, 27" class="carousel-img" onclick="openLightbox('persona', 0)" />
+              <div class="carousel-caption">Luis Smith · Commercial Construction Worker, Age 27</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="Maya.png" alt="Maya Chen — Drexel Sophomore, Product Design, 19" class="carousel-img" onclick="openLightbox('persona', 1)" />
+              <div class="carousel-caption">Maya Chen · Drexel Sophomore, Product Design, Age 19</div>
+            </div>
+            <div class="carousel-slide">
+              <img src="Noah.png" alt="Noah Fox — Drexel Junior, Data Science, 21" class="carousel-img" onclick="openLightbox('persona', 2)" />
+              <div class="carousel-caption">Noah Fox · Drexel Junior, Data Science, Age 21</div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="moveCarousel('persona', -1)">&#8249;</button>
+            <div class="carousel-dots" id="persona-dots">
+              <span class="carousel-dot active" onclick="goToSlide('persona', 0)"></span>
+              <span class="carousel-dot" onclick="goToSlide('persona', 1)"></span>
+              <span class="carousel-dot" onclick="goToSlide('persona', 2)"></span>
+            </div>
+            <button class="carousel-btn" onclick="moveCarousel('persona', 1)">&#8250;</button>
+          </div>
+          <p class="carousel-hint">Click any image to expand ↗</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- USER JOURNEYS -->
+    <div class="timeline-item">
+      <div class="timeline-marker">🗺️</div>
+      <div class="timeline-body">
+        <h3>User Journeys</h3>
+        <p>We mapped the journey for each persona across five stages, from awareness through to post-order experience. This surfaced key friction points at each stage: unclear wait times, too many customization options, and limited payment methods. These pain points directly became design opportunities in the interface.</p>
+
+        <div class="carousel" id="journey-carousel">
+          <div class="carousel-track" id="journey-track">
+            <div class="carousel-slide landscape">
+              <img src="luisJM.png" alt="Luis Smith user journey map — 5 stages from break decision to enjoying his smoothie" class="carousel-img" onclick="openLightbox('journey', 0)" />
+              <div class="carousel-caption">Luis Smith — 5-stage journey map from break time to enjoying his smoothie on site</div>
+            </div>
+            <div class="carousel-slide landscape">
+              <img src="mayaJM.png" alt="Maya Chen user journey map — 5 stages from opening the app to going to class" class="carousel-img" onclick="openLightbox('journey', 1)" />
+              <div class="carousel-caption">Maya Chen — 5-stage journey map from opening the app to going to class with smoothie</div>
+            </div>
+            <div class="carousel-slide landscape">
+              <img src="noahJM.png" alt="Noah Fox user journey map — 5 stages from passing the truck to drinking during co-op" class="carousel-img" onclick="openLightbox('journey', 2)" />
+              <div class="carousel-caption">Noah Fox — 5-stage journey map from passing the truck to drinking during co-op</div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn" onclick="moveCarousel('journey', -1)">&#8249;</button>
+            <div class="carousel-dots" id="journey-dots">
+              <span class="carousel-dot active" onclick="goToSlide('journey', 0)"></span>
+              <span class="carousel-dot" onclick="goToSlide('journey', 1)"></span>
+              <span class="carousel-dot" onclick="goToSlide('journey', 2)"></span>
+            </div>
+            <button class="carousel-btn" onclick="moveCarousel('journey', 1)">&#8250;</button>
+          </div>
+          <p class="carousel-hint">Click any image to expand ↗</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIGMA -->
+    <div class="timeline-item">
+      <div class="timeline-marker">✏️</div>
+      <div class="timeline-body">
+        <h3>Figma Prototype (IDM215 Foundation)</h3>
+        <p>The previous course produced an initial Figma prototype. At the start of IDM216, the team evaluated that design and identified opportunities for improvement, a cleaner visual hierarchy, stronger brand identity, and a more intuitive ordering flow. I took the lead on redesigning the interface in Figma before any code was written, establishing a refreshed visual language that carried through to the final coded product.</p>
+        <!-- <div class="img-grid">
+          <div class="img-placeholder medium">
+            <div class="ph-icon">🖼️</div>
+            <div><strong>IDM215 prototype screens</strong></div>
+          </div>
+          <div class="img-placeholder medium">
+            <div class="ph-icon">🖼️</div>
+            <div><strong>IDM216 redesigned Figma</strong></div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- STYLE GUIDE -->
+    <div class="timeline-item">
+      <div class="timeline-marker">🎨</div>
+      <div class="timeline-body">
+        <h3>Style Guide</h3>
+        <p>The style guide consists of a coral inspired color palette, neutral sand and oat tones, and a pairing of Red Hat Mono with Open Sans. It was the shared reference point that kept the coded prototype visually consistent with the Figma designs throughout development.</p>
+        <div class="single-img-wrap">
+          <img src="StyleGuide.png" alt="KC's Smoothie style guide — color palette and typography" class="single-img" onclick="openSingleLightbox(this)" />
+          <p class="carousel-hint" style="margin-top: 8px;">Click to expand ↗</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALPHA TESTING -->
+    <div class="timeline-item">
+      <div class="timeline-marker">🧪</div>
+      <div class="timeline-body">
+        <h3>Alpha Testing — Figma Prototype</h3>
+        <p>Before writing a single line of code, we conducted alpha testing on the Figma prototype with real users. Participants were walked through key flows, browsing the menu, customizing a smoothie, and checking out. We gathered feedback on clarity, navigation logic, and visual appeal. Findings from this round directly shaped changes made before development began.</p>
+        <!-- <div class="img-placeholder medium">
+          <div class="ph-icon">🖼️</div>
+          <div><strong>Add alpha testing notes / screenshots here</strong></div>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- CODING -->
+    <div class="timeline-item">
+      <div class="timeline-marker">💻</div>
+      <div class="timeline-body">
+        <h3>Coding the Prototype — HTML & CSS</h3>
+        <p>I was the primary designer responsible for translating the Figma designs into a working HTML/CSS version. </p>
+        <!-- <div class="img-grid">
+          <div class="img-placeholder medium">
+            <div class="ph-icon">🖼️</div>
+            <div><strong>Code screenshots / editor view</strong></div>
+          </div>
+          <div class="img-placeholder medium">
+            <div class="ph-icon">🖼️</div>
+            <div><strong>Early coded prototype screens</strong></div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- BETA TESTING -->
+    <div class="timeline-item">
+      <div class="timeline-marker">🔬</div>
+      <div class="timeline-body">
+        <h3>Beta Testing — Coded Prototype</h3>
+        <p>Once the coded prototype was stable, we ran a second round of usability testing on the HTML/CSS version. Findings were used to refine the final version before deployment.</p>
+        <!-- <div class="img-placeholder medium">
+          <div class="ph-icon">🖼️</div>
+          <div><strong>Add beta testing notes / screen recordings here</strong></div>
+        </div> -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Testing Summary -->
+  <h3 style="margin-top: 8px;">Testing Summary</h3>
+  <div class="testing-grid">
+    <div class="test-card">
+      <div class="test-header alpha">🔵 &nbsp; Alpha Testing — Figma Prototype</div>
+      <div class="test-body">
+        Conducted on the interactive Figma prototype before development. Focused on evaluating the navigation flow, menu structure, and overall comprehension of the ordering process. Findings informed the final design before any code was written.
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-header beta">🟠 &nbsp; Beta Testing — Coded Prototype</div>
+      <div class="test-body">
+        Conducted on the functional HTML/CSS build. Evaluated real interactions, responsiveness, and the end-to-end ordering experience in a live environment. Findings were used to polish the beta version to be handed over to the coders to integrate with php.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOLUTION -->
+<div id="solution" class="section">
+  <div class="section-label">04 — The Solution</div>
+  <h2>A mobile ordering experience</h2>
+  <p>The final product is a fully coded, deployed web application that gives KC's customers a way to browse the menu, customize their order, and manage their bag. The interface was designed to feel approachable and quick for users on the go, with a clear visual hierarchy that makes scanning the menu and placing an order effortless.</p>
+
+  <!-- <div class="img-placeholder tall" style="margin-top: 32px;">
+    <div class="ph-icon">🖼️</div>
+    <div><strong>Add final product screenshots here</strong><br>Home screen, menu, customization, bag, and checkout screens</div>
+  </div> -->
+
+  <div class="live-link-wrap">
+    <div>
+      <h3>See it live</h3>
+      <p>The final product is deployed and accessible at the link below.</p>
+    </div>
+    <a class="btn-live" href="https://idm216-k-cs-so63.vercel.app" target="_blank">
+      ↗ Visit KC's Smoothie
+    </a>
+  </div>
+
+  <div class="feature-list">
+    <div class="feature-item">
+      <div class="feature-num">01</div>
+      <div class="feature-text">
+        <h3>Personalized Home Screen</h3>
+        <p>The landing screen greets the user by name and presents featured items including the "Most Popular" Custom Smoothie and a "Campus Pick," making it easy to discover new items while keeping regulars in their groove.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-num">02</div>
+      <div class="feature-text">
+        <h3>Custom Order Builder</h3>
+        <p>Users can fully customize smoothies and fruit cups, mirroring the real KC's experience of telling the vendor exactly what you want. This was a key UX priority identified in the user journey mapping phase.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- RESULTS -->
 <div id="results" class="section">
   <div class="section-label">05 — Results</div>
-  <h2>From zero digital presence to a live product</h2>
+  <h2>Results </h2>
   <p>The project successfully delivered on its core objective: taking KC's from having no digital presence whatsoever to a fully coded, deployed, and user-tested web application. Two rounds of usability testing with real users validated the design direction and informed meaningful iterations at each stage.</p>
 
   <div class="result-grid">
@@ -341,20 +396,12 @@
       <p>Running alpha testing on the Figma prototype and beta testing on the coded build gave us two distinct feedback loops. Issues caught at the prototype stage were resolved before a single line of code was written, saving significant development time.</p>
     </div>
     <div class="result-card">
-      <h3>🚀 Live, Deployed Product</h3>
-      <p>The final product is deployed on Vercel and publicly accessible — a genuine deliverable, not just a classroom exercise. KC's now has a working digital interface it can build on.</p>
-    </div>
-    <div class="result-card">
       <h3>🎨 Design-to-Code Fidelity</h3>
       <p>One of the biggest challenges was maintaining visual consistency between the Figma designs and the coded output. By owning both the redesign and the implementation, I was able to ensure the final product closely reflected the intended design intent.</p>
     </div>
-    <div class="result-card">
-      <h3>📊 Final Grades Pending</h3>
-      <p>Formal course results have not yet been released. This section will be updated with any quantitative feedback, instructor evaluation scores, or user testing metrics once available.</p>
-    </div>
     <div class="result-card full">
       <h3>💡 Lessons Learned</h3>
-      <p>If I were to approach this project again, I would invest more time in establishing design tokens and a shared CSS variable system from the very beginning of development — not just for consistency, but to make iterating on testing feedback much faster. I would also advocate for testing with a broader and more diverse group of users earlier in the process, particularly targeting the non-student segments (faculty, nearby workers) whose use patterns differ meaningfully from a typical Drexel student. Finally, the transition from Figma to code always surfaces edge cases the prototype can't predict — building in dedicated time for this "translation phase" would have made the process smoother.</p>
+      <p>If I were to approach this project again, I would invest more time in establishing design tokens and a shared CSS variable system from the very beginning of development, not just for consistency, but to make iterating on testing feedback much faster. I would also advocate for testing with a broader and more diverse group of users earlier in the process, particularly targeting the non-student segments (faculty, nearby workers) whose use patterns differ meaningfully from a typical Drexel student. Finally, the transition from Figma to code always surfaces edge cases the prototype can't predict — building in dedicated time for this "translation phase" would have made the process smoother.</p>
     </div>
   </div>
 </div>
@@ -364,6 +411,85 @@
   <div class="footer-left">KC's Smoothie — Case Study</div>
   <div class="footer-right">Team 4Corners · IDM216 · Drexel University</div>
 </footer>
+
+<script>
+  /* ── CAROUSEL STATE ── */
+  const state = {};
+
+  function getCount(id) {
+    return document.getElementById(id + '-track').querySelectorAll('.carousel-slide').length;
+  }
+
+  function updateCarousel(id) {
+    const idx = state[id] || 0;
+    document.getElementById(id + '-track').style.transform = `translateX(-${idx * 100}%)`;
+    document.querySelectorAll(`#${id}-dots .carousel-dot`).forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+  function moveCarousel(id, dir) {
+    state[id] = ((state[id] || 0) + dir + getCount(id)) % getCount(id);
+    updateCarousel(id);
+  }
+
+  function goToSlide(id, idx) {
+    state[id] = idx;
+    updateCarousel(id);
+  }
+
+  /* ── LIGHTBOX ── */
+  let lbImages = [], lbIdx = 0;
+
+  function openLightbox(id, startIdx) {
+    const slides = document.getElementById(id + '-track').querySelectorAll('.carousel-slide');
+    lbImages = Array.from(slides).map(s => ({
+      src: s.querySelector('img').src,
+      alt: s.querySelector('img').alt,
+      caption: s.querySelector('.carousel-caption')?.textContent || ''
+    }));
+    lbIdx = startIdx;
+    renderLb();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openSingleLightbox(img) {
+    lbImages = [{ src: img.src, alt: img.alt, caption: img.alt }];
+    lbIdx = 0;
+    renderLb();
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function renderLb() {
+    document.getElementById('lb-img').src = lbImages[lbIdx].src;
+    document.getElementById('lb-img').alt = lbImages[lbIdx].alt;
+    document.getElementById('lb-caption').textContent = lbImages[lbIdx].caption;
+    const show = lbImages.length > 1;
+    document.querySelector('.lb-prev').style.display = show ? 'flex' : 'none';
+    document.querySelector('.lb-next').style.display = show ? 'flex' : 'none';
+  }
+
+  function lbNav(dir, e) {
+    e.stopPropagation();
+    lbIdx = (lbIdx + dir + lbImages.length) % lbImages.length;
+    renderLb();
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', e => {
+    const lb = document.getElementById('lightbox');
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft')  { lbIdx = (lbIdx - 1 + lbImages.length) % lbImages.length; renderLb(); }
+    if (e.key === 'ArrowRight') { lbIdx = (lbIdx + 1) % lbImages.length; renderLb(); }
+  });
+</script>
 
 </body>
 </html>
